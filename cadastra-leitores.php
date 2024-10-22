@@ -1,39 +1,44 @@
 <?php
 include "config.php";
 if (!$conn){
-    die("Falha na conexão {mysqli_onnecct_error()");
-}
+die ("Falha na conexão {mysqli_connect_error()}");
 
-//recebe dados do formulário
-$nome = 'Ryan felipe';
-$dtnasc = '2002-06-27';
-$celular = '(81) 98765-0000';
-$email=  'ryanfelipe@gmail.com';
-$ra = '12155';
-$endereco = 'rua carpina';
-$numend = '55';
-$bairro = 'janga';
-$cidadeuf = 'paulista-PE';
+} 
+//receber os dados do formulário
+$nome = 'Bianca';
+$dtnasc = '2007-02-04';
+$celular = '(81) 9990-4508';
+$email = 'siqueirabianca254@gmail.com';
+$ra = '356788';
+$endereco = 'Torres';
+$num_end = '46'; 
+$bairro = 'Janga';
+$cidade = 'Paulista/PE';
 
-//cria variável para inserir o registro
-$sql = "INSERT INTO leitores
-(Nome, DtNasc, Celular, Email, RA, Endereco, NumEnd, Bairro, CidadeUF) values
-('$nome', '$dtnasc', '$celular', '$email', '$ra', '$endereco', $numend', '$bairro', '$cidadeuf')";
+// cria variável para inserir o registro
+$sql = "INSERT INTO `leitores`
+( `Nome`, `DtNasc`, `Celular`, `Email`, `RA`, `Endereco`, `NumEnd`, `Bairro`, `CidadeUF`) VALUES
+ ('$nome','$dtnasc','$celular','$email','$ra','$endereco','$num_end','$bairro','$cidade')";
 
-//executa a consulta SQL. Se falha, exibe o ero do banco de dados 
-$query = mysqli_query(mysql: $conn,query: $sql) or
-die(mysqli_error(mysql: $conn));
+ //executa a consulta SQL. Se falhar, exibe o erro do banco de dados
+ $query= mysqli_query (mysql:$conn,query: $sql)  or
+ die (mysqli_error (mysql:$conn));
 
-if($query){
-    echo"<center>";
-    echo "cadastro realizado com sucesso!!<br>";
-    echo "<a href='index.php'><button title= 'Homepage'>voltar</button></a>";
-    echo "</center>";
-} else{
-    echo "<center>";
-    echo "Erro ao cadastrar!!<br>";
-    echo "<a href='index.php'><button title='Home page'>voltar</button></a>";
-    echo "</center>";
-}
+ if ($query){
+echo "<center>";
+echo "Cadastro realizado com sucesso!!<br>";
+echo " <a href = 'index.php'><button title = 'Home page'>Voltar</button></a>";
+echo "</center>";
+ }else {
+echo "<center>";
+echo" <a href = 'index.php'><button title = 'Home page'>Voltar</button></a>";
+echo "</center>";
+
+ }
 ?>
+
+
+
  
+
+
