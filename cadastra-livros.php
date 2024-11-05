@@ -1,4 +1,5 @@
 
+
 <?php
 //inclui o arquivo de configuração (conexão  com banco de dados)
 include "config.php";
@@ -9,7 +10,7 @@ if (!$conn){
 }
 
 //recebe os dados do formulário
-$Titulo =$_POST['Titulo'];
+$Titulo = $_POST['Titulo'];
 $Autor = $_POST['Autor'];
 $Editora = $_POST['Editora'];
 $Sinopse = $_POST['Snopse'];
